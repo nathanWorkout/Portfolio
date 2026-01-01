@@ -132,13 +132,9 @@ nav ul li a.active {
     text-align: center;
     font-size: 5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, rgb(100, 200, 255) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     letter-spacing: -2px;
-    animation: fadeInUp 1s ease-out, glow 3s ease-in-out infinite;
-    text-shadow: 0 0 40px rgba(100, 200, 255, 0.3);
+    animation: fadeInUp 1s ease-out;
 }
 
 .description {
@@ -155,14 +151,10 @@ nav ul li a.active {
 }
 
 .description > .descriptionVague {
-    background: linear-gradient(135deg, rgba(100, 200, 255, 0.9) 0%, rgba(150, 220, 255, 0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: rgb(100, 200, 255);
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    filter: drop-shadow(0 0 15px rgba(100, 200, 255, 0.3));
 }
 
 .descriptionVague::after {
@@ -170,9 +162,8 @@ nav ul li a.active {
     display: inline-block;
     width: 2px;
     height: 1.4em;
-    background: linear-gradient(180deg, rgba(100, 200, 255, 1), rgba(100, 200, 255, 0.3));
+    background: rgb(100, 200, 255);
     animation: cursorBlink 1.2s ease-in-out infinite;
-    box-shadow: 0 0 8px rgba(100, 200, 255, 0.6);
     margin-left: 4px;
     vertical-align: middle;
 }
@@ -220,33 +211,13 @@ nav ul li a.active {
     overflow: hidden;
 }
 
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translate(-50%, -50%);
-    transition: width 0.5s ease, height 0.5s ease;
-}
-
-.btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
 .btn-primary {
     background: linear-gradient(135deg, rgb(100, 200, 255) 0%, rgb(80, 160, 230) 100%);
     color: #000000;
     border: 2px solid transparent;
-    box-shadow: 0 0 20px rgba(100, 200, 255, 0.4);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 0 30px rgba(100, 200, 255, 0.6), 0 0 50px rgba(100, 200, 255, 0.3);
     transform: translateY(-3px);
 }
 
@@ -254,12 +225,10 @@ nav ul li a.active {
     background: transparent;
     color: rgb(100, 200, 255);
     border: 2px solid rgb(100, 200, 255);
-    box-shadow: 0 0 15px rgba(100, 200, 255, 0.2);
 }
 
 .btn-secondary:hover {
     background: rgba(100, 200, 255, 0.1);
-    box-shadow: 0 0 25px rgba(100, 200, 255, 0.4), 0 0 40px rgba(100, 200, 255, 0.2);
     transform: translateY(-3px);
 }
 
@@ -293,12 +262,8 @@ nav ul li a.active {
 .section-content h2 {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ffffff 0%, rgb(100, 200, 255) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     margin-bottom: 2rem;
-    filter: drop-shadow(0 0 20px rgba(100, 200, 255, 0.3));
 }
 
 .section-content p {
@@ -333,35 +298,11 @@ nav ul li a.active {
     min-width: 200px;
     flex: 1;
     max-width: 250px;
-    transition: all 0.4s ease;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="rgb(100, 200, 255)" stroke-width="2.5"/><circle cx="12" cy="12" r="3" fill="rgb(100, 200, 255)"/></svg>') 12 12, pointer;
     position: relative;
     overflow: hidden;
     opacity: 0;
     transform: translateY(50px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(100, 200, 255, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.stat-card:hover::before {
-    left: 100%;
-}
-
-.stat-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(100, 200, 255, 0.5);
-    box-shadow: 0 8px 30px rgba(100, 200, 255, 0.3);
-    background: rgba(20, 20, 40, 0.8);
 }
 
 .stat-card.animate {
@@ -383,12 +324,8 @@ nav ul li a.active {
 .stat-number {
     font-size: 3.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, rgb(100, 200, 255) 0%, rgb(150, 220, 255) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: rgb(100, 200, 255);
     margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 15px rgba(100, 200, 255, 0.3));
 }
 
 .stat-number::after {
@@ -421,35 +358,10 @@ nav ul li a.active {
     border: 1px solid rgba(100, 200, 255, 0.2);
     border-radius: 20px;
     overflow: hidden;
-    transition: all 0.4s ease;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="rgb(100, 200, 255)" stroke-width="2.5"/><circle cx="12" cy="12" r="3" fill="rgb(100, 200, 255)"/></svg>') 12 12, pointer;
     position: relative;
     opacity: 0;
     transform: translateY(50px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(100, 200, 255, 0.05), transparent);
-    transition: left 0.7s ease;
-    z-index: 1;
-}
-
-.project-card:hover::before {
-    left: 100%;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(100, 200, 255, 0.5);
-    box-shadow: 0 8px 40px rgba(100, 200, 255, 0.3);
-    background: rgba(20, 20, 40, 0.8);
 }
 
 .project-card.animate {
@@ -478,11 +390,6 @@ nav ul li a.active {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-img {
-    transform: scale(1.1);
 }
 
 .project-image::after {
@@ -504,12 +411,8 @@ nav ul li a.active {
 .project-content h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ffffff 0%, rgb(100, 200, 255) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     margin-bottom: 0.8rem;
-    filter: drop-shadow(0 0 10px rgba(100, 200, 255, 0.2));
 }
 
 .project-content p {
@@ -534,13 +437,6 @@ nav ul li a.active {
     font-size: 0.8rem;
     font-weight: 500;
     color: rgb(100, 200, 255);
-    transition: all 0.3s ease;
-}
-
-.tag:hover {
-    background: rgba(100, 200, 255, 0.2);
-    border-color: rgba(100, 200, 255, 0.5);
-    box-shadow: 0 0 15px rgba(100, 200, 255, 0.3);
 }
 
 /* ============================= Skills Section ============================= */
@@ -560,35 +456,11 @@ nav ul li a.active {
     border: 1px solid rgba(100, 200, 255, 0.2);
     border-radius: 20px;
     padding: 2rem;
-    transition: all 0.4s ease;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="rgb(100, 200, 255)" stroke-width="2.5"/><circle cx="12" cy="12" r="3" fill="rgb(100, 200, 255)"/></svg>') 12 12, pointer;
     position: relative;
     overflow: hidden;
     opacity: 0;
     transform: translateY(50px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.skill-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(100, 200, 255, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.skill-category:hover::before {
-    left: 100%;
-}
-
-.skill-category:hover {
-    transform: translateY(-10px);
-    border-color: rgba(100, 200, 255, 0.5);
-    box-shadow: 0 8px 30px rgba(100, 200, 255, 0.3);
-    background: rgba(20, 20, 40, 0.8);
 }
 
 .skill-category.animate {
@@ -610,12 +482,8 @@ nav ul li a.active {
 .skill-category h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ffffff 0%, rgb(100, 200, 255) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px rgba(100, 200, 255, 0.2));
 }
 
 .skill-items {
@@ -632,14 +500,6 @@ nav ul li a.active {
     font-size: 0.9rem;
     font-weight: 500;
     color: rgb(100, 200, 255);
-    transition: all 0.3s ease;
-}
-
-.skill-item:hover {
-    background: rgba(100, 200, 255, 0.2);
-    border-color: rgba(100, 200, 255, 0.5);
-    box-shadow: 0 0 15px rgba(100, 200, 255, 0.3);
-    transform: translateY(-3px);
 }
 
 /* ============================= Contact Section ============================= */
@@ -665,35 +525,11 @@ nav ul li a.active {
     border: 1px solid rgba(100, 200, 255, 0.2);
     border-radius: 20px;
     padding: 2rem;
-    transition: all 0.4s ease;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="rgb(100, 200, 255)" stroke-width="2.5"/><circle cx="12" cy="12" r="3" fill="rgb(100, 200, 255)"/></svg>') 12 12, pointer;
     position: relative;
     overflow: hidden;
     opacity: 0;
     transform: translateY(50px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.contact-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(100, 200, 255, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.contact-item:hover::before {
-    left: 100%;
-}
-
-.contact-item:hover {
-    transform: translateY(-10px);
-    border-color: rgba(100, 200, 255, 0.5);
-    box-shadow: 0 8px 30px rgba(100, 200, 255, 0.3);
-    background: rgba(20, 20, 40, 0.8);
 }
 
 .contact-item.animate {
@@ -723,24 +559,13 @@ nav ul li a.active {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    filter: drop-shadow(0 0 15px rgba(100, 200, 255, 0.3));
-    transition: all 0.3s ease;
-}
-
-.contact-item:hover .contact-icon img {
-    filter: drop-shadow(0 0 25px rgba(100, 200, 255, 0.5));
-    transform: scale(1.1);
 }
 
 .contact-item h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ffffff 0%, rgb(100, 200, 255) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     margin-bottom: 0.8rem;
-    filter: drop-shadow(0 0 10px rgba(100, 200, 255, 0.2));
 }
 
 .contact-item a {
@@ -773,15 +598,6 @@ nav ul li a.active {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes glow {
-    0%, 100% {
-        filter: drop-shadow(0 0 20px rgba(100, 200, 255, 0.4));
-    }
-    50% {
-        filter: drop-shadow(0 0 40px rgba(100, 200, 255, 0.6));
     }
 }
 
