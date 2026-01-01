@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Delahaye - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="prénom">Nathan | Developer</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <canvas id="canvas"></canvas>
+    
+    <section id="home" class="section">
+        <div id="presentation">Hi, I'm Nathan Delahaye</div>
+        
+        <div class="description">
+            <div class="descriptionVague"></div>
+        </div>
+        
+        <div id="passion">A developer passionate about the web and interactive systems, with a strong interest in computer vision and biomechanics.</div>
+        
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="CV pour portfolio.pdf" download class="btn btn-secondary">Download CV</a>
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <div class="section-content">
+            <h2>About Me</h2>
+            <p>
+                I am a developer focused on building clear, useful, and well-designed software and websites.
+            </p>
+            <p>    
+                I focus on understanding problems before coding and improving projects through iteration rather than unnecessary complexity.    
+            </p>
+            <p>    
+                I am especially interested in front-end development, interactive software, and computer vision applied to human movement.
+            </p>
+            
+            <div class="stats-container">
+                <div class="stat-card" data-index="1">
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-label">Production App</div>
+                </div>
+                
+                <div class="stat-card" data-index="2">
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-label">Launching soon</div>
+                </div>
+                
+                <div class="stat-card" data-index="3">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Early Users</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="section">
+        <div class="section-content">
+            <h2>My Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card" data-index="1">
+                    <div class="project-image">
+                        <img src="LevelUpcali.png" alt="Fitness App" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Fitness App</h3>
+                        <p>Application using computer vision to analyze movements and track the progress of athletes in strength and bodyweight exercises</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-index="2">
+                    <div class="project-image">
+                        <img src="images.jpg" alt="Note-Taking App" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Note-Taking App</h3>
+                        <p>All-in-one note-taking application (text, image, videos, mind map) with a simple and intuitive interface, for web and mobile (in development)</p>
+                        <div class="project-tags">
+                            <span class="tag">React Pwa</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="section-content">
+            <h2>My Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category" data-index="1">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-index="2">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Firebase</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-index="3">
+                    <h3>Specialized</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Computer Vision</span>
+                        <span class="skill-item">UI/UX Design</span>
+                        <span class="skill-item">Biomechanics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-content">
+            <h2>Contact Me</h2>
+            
+            <p class="contact-intro">Feel free to reach out for collaborations, questions, or just to connect!</p>
+            
+            <div class="contact-methods">
+                <div class="contact-item" data-index="1">
+                    <div class="contact-icon">
+                        <img src="mail.png" alt="Email">
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:nathan.delahaye08@gmail.com">nathan.delahaye08@gmail.com</a>
+                </div>
+                
+                <div class="contact-item" data-index="3">
+                    <div class="contact-icon">
+                        <img src="computer.png" alt="GitHub">
+                    </div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/nathanWorkout" target="_blank">github.com/nathanWorkout</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
