@@ -1,0 +1,106 @@
+section {
+  position: relative;
+  min-height: 100svh;
+}
+
+section > * {
+  position: relative;
+  z-index: 2;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8vh 6% 6vh;
+  background-image:
+    linear-gradient(rgba(180, 220, 225, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 220, 225, 0.11) 1px, transparent 1px);
+  background-size: 6rem 6rem, 6rem 6rem;
+  background-position: 0 0, 0 0;
+}
+
+#hero::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 72vw;
+  background: url('/img/circuit_board.png') center top / cover no-repeat;
+  content: '';
+  pointer-events: none;
+}
+
+#hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(180, 220, 225, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 220, 225, 0.11) 1px, transparent 1px);
+  background-size: 6rem 6rem;
+  background-position: 0 0;
+  content: '';
+  pointer-events: none;
+}
+
+#intro {
+  margin-top: auto;
+  margin-right: 18%;
+  margin-left: auto;
+  align-self: flex-end;
+  transform: translateY(-4vh);
+  color: #d6e5e7;
+  font-size: 6.2vw;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-align: right;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
+}
+
+#intro span {
+  display: block;
+}
+
+#intro span:nth-child(1) {
+  font-weight: 500;
+}
+
+#intro span:nth-child(2) {
+  font-weight: 700;
+}
+
+#intro span:nth-child(3) {
+  font-size: 0.88em;
+  color: #d6e5e7;
+  text-decoration: underline;
+  text-decoration-color: #45c9f5;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.14em;
+}
+
+@media (max-width: 700px) {
+  #hero {
+    min-height: 100svh;
+    padding: 7rem 6% 8vh;
+  }
+
+  #intro {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.4rem, 10vw, 4rem);
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 1;
+    text-align: center;
+  }
+
+  #hero::before {
+    width: 100vw;
+    background-position: calc(80% - 2rem) 5rem;
+    background-size: 200% auto;
+  }
+}
