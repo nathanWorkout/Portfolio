@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/hero.css';
 import Layout from '../layouts/layout.astro';
+import PortfolioSidebar from '../components/PortfolioSidebar.astro';
 
 const assetBase = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -10,51 +11,7 @@ const assetBase = import.meta.env.BASE_URL.endsWith('/')
 
 <Layout title="Portfolio">
   <div class="page">
-    <button class="menu-toggle" type="button" aria-controls="portfolio-nav" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span class="sr-only">Ouvrir le menu</span>
-    </button>
-
-    <aside class="portfolio-nav" id="portfolio-nav">
-      <p class="nav-identity"><strong>Nathan</strong> - Développeur système</p>
-
-      <nav aria-label="Navigation principale">
-        <div class="nav-group">
-          <span class="nav-title">Mon histoire</span>
-          <div class="nav-children">
-            <span>Comment j'ai commencé ?</span>
-            <span>Mon parcours</span>
-            <span>Mes erreurs</span>
-            <span>Mes qualités</span>
-            <span>Où j'en suis actuellement</span>
-          </div>
-        </div>
-
-        <div class="nav-group">
-          <span class="nav-title">Mes projets</span>
-          <div class="nav-children">
-            <span>Système d'exploitation 64 bits</span>
-            <span>Compilateur x86_64</span>
-            <span>Construction d'un cpu 8 bits de zero</span>
-            <span>Rice Linux complet</span>
-            <span>Analyse du code du kernel Linux</span>
-            <span>Application TUI</span>
-          </div>
-        </div>
-
-        <div class="nav-group">
-          <span class="nav-title">Mes réseaux</span>
-          <div class="nav-children">
-            <span>TikTok</span>
-            <span>GitHub</span>
-            <span>LinkedIn</span>
-            <span>Email</span>
-          </div>
-        </div>
-      </nav>
-    </aside>
+    <PortfolioSidebar />
 
     <section id="hero" style={`--circuit-image: url('${assetBase}img/circuit_board.png')`}>
       <p id="intro">
@@ -63,20 +20,5 @@ const assetBase = import.meta.env.BASE_URL.endsWith('/')
         <span>de zéro.</span>
       </p>
     </section>
-
   </div>
-
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const portfolioNav = document.querySelector('.portfolio-nav');
-
-    menuToggle?.addEventListener('click', () => {
-      const isOpen = portfolioNav?.classList.toggle('is-open') ?? false;
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      const menuLabel = menuToggle.querySelector('.sr-only');
-      if (menuLabel) menuLabel.textContent = isOpen
-        ? 'Fermer le menu'
-        : 'Ouvrir le menu';
-    });
-  </script>
 </Layout>

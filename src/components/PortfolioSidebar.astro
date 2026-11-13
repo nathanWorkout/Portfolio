@@ -1,0 +1,79 @@
+---
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const groups = [
+  {
+    title: 'Mon histoire',
+    href: `${base}histoire/`,
+    children: [
+      "Comment j'ai commencé ?",
+      'Mon parcours',
+      'Mes erreurs',
+      'Mes qualités',
+      "Où j'en suis actuellement",
+    ],
+  },
+  {
+    title: 'Mes projets',
+    href: `${base}projets/`,
+    children: [
+      "Système d'exploitation 64 bits",
+      'Compilateur x86_64',
+      "Construction d'un cpu 8 bits de zero",
+      'Rice Linux complet',
+      'Analyse du code du kernel Linux',
+      'Application TUI',
+    ],
+  },
+  {
+    title: 'Mes réseaux',
+    href: `${base}reseaux/`,
+    children: ['TikTok', 'GitHub', 'LinkedIn', 'Email'],
+  },
+];
+---
+
+<button
+  class="menu-toggle"
+  type="button"
+  aria-controls="portfolio-nav"
+  aria-expanded="false"
+  aria-label="Ouvrir le menu"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<aside class="portfolio-nav" id="portfolio-nav">
+  <a class="nav-identity" href={base}>
+    <strong>Nathan</strong> - Développeur système
+  </a>
+
+  <nav aria-label="Navigation principale">
+    {groups.map((group) => (
+      <div class="nav-group">
+        <span class="nav-title">{group.title}</span>
+        <div class="nav-children">
+          {group.children.map((child) => (
+            <a href={group.href}>{child}</a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </nav>
+</aside>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const portfolioNav = document.querySelector('.portfolio-nav');
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = portfolioNav?.classList.toggle('is-open') ?? false;
+    document.body.classList.toggle('is-menu-open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+</script>
