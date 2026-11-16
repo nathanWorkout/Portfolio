@@ -1,11 +1,162 @@
 ---
 import '../styles/global.css';
+import '../styles/hero.css';
 import Layout from '../layouts/layout.astro';
 import PortfolioSidebar from '../components/PortfolioSidebar.astro';
+import PagePagination from '../components/PagePagination.astro';
+
+const assetBase = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Layout title="Mon histoire - Portfolio">
   <div class="page">
     <PortfolioSidebar />
+
+    <main id="history">
+      <section
+        class="history-intro"
+        style={`--circuit-image: url('${assetBase}img/circuit_board.png')`}
+      >
+        <header class="history-heading">
+          <p class="eyebrow">Mon histoire / 01</p>
+          <h1>Mon histoire</h1>
+        </header>
+
+        <article class="history-story" data-story aria-live="polite">
+          <div class="history-story-step is-active">
+            <div class="history-story-content">
+              <span class="history-story-index">01/06</span>
+              <span class="history-story-label">PYTHON : PREMIERS PAS</span>
+              <p>
+                À 14 ans, j’ai ouvert pour la première fois la console web et ça m’a
+                fasciné. Je voulais écrire ces lignes complexes par moi-même.
+              </p>
+              <p>
+                J’ai donc commencé par apprendre Python. À l’époque, je ne savais pas
+                qu’il existait des tutoriels YouTube, alors j’ai appris les bases
+                uniquement avec la vieille documentation.
+              </p>
+            </div>
+          </div>
+          <div class="history-story-step">
+            <div class="history-story-content">
+              <span class="history-story-index">02/06</span>
+              <span class="history-story-label">C : UN NOUVEAU DÉPART</span>
+              <p>
+                Au fil des mois, j’ai enchaîné les échecs : des librairies que je
+                n’arrivais pas à installer, des pages web sans aucune cohérence
+                visuelle. J’ai alors cherché une autre voie et me suis tourné vers
+                le C. Ce fut une révélation : un langage simple à prendre en main,
+                bien documenté, et applicable à une grande diversité de projets.
+              </p>
+            </div>
+          </div>
+          <div class="history-story-step">
+            <div class="history-story-content">
+              <span class="history-story-index">03/06</span>
+              <span class="history-story-label">C : MINIMAX</span>
+              <p>
+                Une fois les bases acquises, j’ai consacré une semaine de vacances à
+                l’implémentation d’un jeu en console reposant sur l’algorithme
+                Minimax. Les ressources étaient rares et la difficulté réelle, mais
+                le projet a abouti. Cette réussite m’a convaincu de pouvoir viser des
+                projets plus ambitieux, et m’a définitivement attiré vers le bas niveau.
+              </p>
+            </div>
+          </div>
+          <div class="history-story-step">
+            <div class="history-story-content">
+              <span class="history-story-index">04/06</span>
+              <span class="history-story-label">C, C++, JAVA, NASM</span>
+              <p>
+                J’ai poursuivi avec le C, en explorant au passage le C++, le Java et
+                Python (MediaPipe). C’est l’assembleur NASM qui m’a opposé ma
+                première vraie limite : la complexité m’a conduit à abandonner.
+                J’y suis revenu quelques mois plus tard et ai écrit mes premiers
+                programmes.
+              </p>
+            </div>
+          </div>
+          <div class="history-story-step">
+            <div class="history-story-content">
+              <span class="history-story-index">05/06</span>
+              <span class="history-story-label">C : INTERPRÉTEUR</span>
+              <p>
+                La complexité de mes projets a ensuite fortement augmenté. Mon
+                premier interpréteur, conçu sans réelle réflexion préalable, est
+                resté très limité, mais m’a appris beaucoup sur le fonctionnement
+                interne d’une machine.
+              </p>
+            </div>
+          </div>
+          <div class="history-story-step">
+            <div class="history-story-content">
+              <span class="history-story-index">06/06</span>
+              <span class="history-story-label">C, NASM : SYSTÈME D'EXPLOITATION 64 BITS</span>
+              <p>
+                Une fois à l’aise en C et en assembleur, j’ai commencé le
+                développement de mon propre système d’exploitation 64 bits, en cours
+                depuis près d’un an. Certains bugs ont demandé 15 à 20 heures de
+                résolution, et la documentation matérielle est souvent dense et
+                lacunaire. C’est ce type de problème qui nourrit mon intérêt pour le
+                domaine.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <div class="history-controls">
+          <nav class="history-stepper" aria-label="Étapes de mon histoire">
+            <button type="button" data-story-previous aria-label="Texte précédent">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 7-7 7 7" />
+                <path d="M12 19V5" />
+              </svg>
+            </button>
+            <button type="button" data-story-next aria-label="Texte suivant">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14" />
+                <path d="m19 12-7 7-7-7" />
+              </svg>
+            </button>
+          </nav>
+
+        </div>
+      </section>
+
+    </main>
+
+    <PagePagination
+      previous={{ href: assetBase, label: 'Accueil' }}
+      next={{
+        href: `${assetBase}projets/#systeme-exploitation-64-bits`,
+        label: "Système d'exploitation 64 bits",
+      }}
+    />
   </div>
 </Layout>
+
+<script>
+  const story = document.querySelector('[data-story]');
+  const paragraphs = story ? Array.from(story.querySelectorAll('.history-story-step')) : [];
+  const previousButton = document.querySelector('[data-story-previous]');
+  const nextButton = document.querySelector('[data-story-next]');
+  let activeIndex = 0;
+
+  const updateStory = (nextIndex) => {
+    if (nextIndex < 0 || nextIndex >= paragraphs.length) return;
+
+    activeIndex = nextIndex;
+    paragraphs.forEach((paragraph, index) => {
+      paragraph.classList.toggle('is-active', index === activeIndex);
+    });
+    previousButton?.toggleAttribute('disabled', activeIndex === 0);
+    nextButton?.toggleAttribute('disabled', activeIndex === paragraphs.length - 1);
+  };
+
+  previousButton?.addEventListener('click', () => updateStory(activeIndex - 1));
+  nextButton?.addEventListener('click', () => updateStory(activeIndex + 1));
+  updateStory(0);
+</script>

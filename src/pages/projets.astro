@@ -2,10 +2,29 @@
 import '../styles/global.css';
 import Layout from '../layouts/layout.astro';
 import PortfolioSidebar from '../components/PortfolioSidebar.astro';
+import PagePagination from '../components/PagePagination.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Layout title="Mes projets - Portfolio">
   <div class="page">
     <PortfolioSidebar />
+    <main class="projects-page">
+      <section id="systeme-exploitation-64-bits" class="project-section">
+        <p class="eyebrow">Projet / 01</p>
+        <h1>Système d'exploitation 64 bits</h1>
+        <p>
+          Développement d'un système d'exploitation 64 bits en C et en assembleur
+          NASM.
+        </p>
+      </section>
+    </main>
+    <PagePagination
+      previous={{ href: `${base}histoire/`, label: 'Mon histoire' }}
+      next={{ href: `${base}reseaux/`, label: 'Mes réseaux' }}
+    />
   </div>
 </Layout>

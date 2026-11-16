@@ -1,0 +1,28 @@
+---
+interface Props {
+  previous?: { href: string; label: string };
+  next?: { href: string; label: string };
+}
+
+const { previous, next } = Astro.props;
+---
+
+<nav class="page-pagination" aria-label="Navigation entre les pages">
+  {previous ? (
+    <a class="page-pagination-link" href={previous.href} aria-label={`Page précédente : ${previous.label}`}>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m12 19-7-7 7-7" />
+        <path d="M19 12H5" />
+      </svg>
+    </a>
+  ) : null}
+
+  {next ? (
+    <a class="page-pagination-link" href={next.href} aria-label={`Page suivante : ${next.label}`}>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </svg>
+    </a>
+  ) : null}
+</nav>

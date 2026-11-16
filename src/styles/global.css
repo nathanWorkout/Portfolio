@@ -48,6 +48,34 @@ body::before {
   overflow-x: clip;
 }
 
+.projects-page {
+  min-height: 100svh;
+  padding: 14vh 8% 14vh 34vw;
+  background: #0b1a1e;
+}
+
+.project-section {
+  max-width: 52rem;
+  padding-top: 12vh;
+  scroll-margin-top: 2rem;
+}
+
+.project-section h1 {
+  margin-bottom: 2rem;
+  color: #d6e5e7;
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 0.94;
+}
+
+.project-section > p:last-child {
+  max-width: 40rem;
+  color: #d6e5e7;
+  font-size: clamp(1.1rem, 1.55vw, 1.55rem);
+  line-height: 1.45;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -61,6 +89,38 @@ body::before {
 
 .menu-toggle {
   display: none;
+}
+
+.page-pagination {
+  position: fixed;
+  right: 2rem;
+  bottom: 1.5rem;
+  z-index: 20;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.page-pagination-link {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(214, 229, 231, 0.25);
+  border-radius: 0.35rem;
+  background: rgba(16, 25, 29, 0.82);
+  color: var(--sidebar-text);
+  text-decoration: none;
+}
+
+.page-pagination-link svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
 .portfolio-nav {
@@ -154,6 +214,14 @@ body::before {
     background: #0b1a1e;
   }
 
+  .projects-page {
+    padding: 7rem 7% 8rem;
+  }
+
+  .project-section {
+    padding-top: 5rem;
+  }
+
   .portfolio-nav {
     position: fixed;
     top: 0;
@@ -186,6 +254,15 @@ body::before {
     border: 0;
     background: transparent;
     cursor: pointer;
+  }
+
+  .page-pagination {
+    right: 1.25rem;
+    bottom: 1.25rem;
+  }
+
+  body.is-menu-open .page-pagination {
+    display: none;
   }
 
   .menu-toggle span:not(.sr-only) {

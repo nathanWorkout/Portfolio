@@ -8,18 +8,14 @@ const groups = [
     title: 'Mon histoire',
     href: `${base}histoire/`,
     children: [
-      "Comment j'ai commencé ?",
-      'Mon parcours',
-      'Mes erreurs',
-      'Mes qualités',
-      "Où j'en suis actuellement",
+      { label: 'Mon histoire', href: `${base}histoire/` },
     ],
   },
   {
     title: 'Mes projets',
     href: `${base}projets/`,
     children: [
-      "Système d'exploitation 64 bits",
+      { label: "Système d'exploitation 64 bits", href: `${base}projets/#systeme-exploitation-64-bits` },
       'Compilateur x86_64',
       "Construction d'un cpu 8 bits de zero",
       'Rice Linux complet',
@@ -58,7 +54,9 @@ const groups = [
         <span class="nav-title">{group.title}</span>
         <div class="nav-children">
           {group.children.map((child) => (
-            <a href={group.href}>{child}</a>
+            <a href={typeof child === 'string' ? group.href : child.href}>
+              {typeof child === 'string' ? child : child.label}
+            </a>
           ))}
         </div>
       </div>

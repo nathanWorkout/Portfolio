@@ -2,10 +2,19 @@
 import '../styles/global.css';
 import Layout from '../layouts/layout.astro';
 import PortfolioSidebar from '../components/PortfolioSidebar.astro';
+import PagePagination from '../components/PagePagination.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Layout title="Mes réseaux - Portfolio">
   <div class="page">
     <PortfolioSidebar />
+    <PagePagination
+      previous={{ href: `${base}projets/`, label: 'Mes projets' }}
+      next={{ href: base, label: 'Accueil' }}
+    />
   </div>
 </Layout>

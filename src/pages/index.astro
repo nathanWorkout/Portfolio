@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/hero.css';
 import Layout from '../layouts/layout.astro';
 import PortfolioSidebar from '../components/PortfolioSidebar.astro';
+import PagePagination from '../components/PagePagination.astro';
 
 const assetBase = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -20,5 +21,7 @@ const assetBase = import.meta.env.BASE_URL.endsWith('/')
         <span>de zéro.</span>
       </p>
     </section>
+
+    <PagePagination next={{ href: `${assetBase}histoire/`, label: 'Mon histoire' }} />
   </div>
 </Layout>
