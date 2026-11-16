@@ -1,0 +1,56 @@
+---
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<section id="systeme-exploitation-64-bits" class="project-section">
+  <p class="eyebrow">Système d'exploitation 64 bits</p>
+  <h1>VaultOs</h1>
+
+  <div class="project-video-frame">
+    <video
+      class="project-media project-video"
+      controls
+      preload="metadata"
+      playsinline
+      aria-label="Aperçu vidéo de VaultOs"
+    >
+      <source src={`${base}img/portfolio_os.mp4`} type="video/mp4" />
+      Votre navigateur ne prend pas en charge la lecture des vidéos.
+    </video>
+  </div>
+
+  <div class="project-description">
+    <p>
+      VaultOS est un système d’exploitation 64 bits open source pensé pour la
+      personnalisation extrême. L’objectif est simple : permettre à l’utilisateur de
+      modifier chaque aspect de son environnement sans jamais risquer de compromettre
+      le système, là où une mauvaise manipulation sous Linux peut rendre une machine
+      inutilisable.
+    </p>
+    <p>
+      Le noyau intègre des mécanismes de protection qui isolent le cœur du système de
+      toute modification accidentelle ou malveillante. Chaque profil utilisateur
+      dispose d’un environnement entièrement indépendant (applications, configuration,
+      interface...) sans interférence avec les autres.
+    </p>
+    <p>
+      VaultOS place l’expérience utilisateur au premier plan, avec une sécurité qui
+      opère en arrière-plan, de manière transparente.
+    </p>
+  </div>
+
+  <div class="project-gallery" aria-label="Images de VaultOs">
+    <img
+      class="project-media project-gallery-image"
+      src={`${base}img/os1.png`}
+      alt="Interface de VaultOs"
+    />
+    <img
+      class="project-media project-gallery-image"
+      src={`${base}img/os2.png`}
+      alt="Environnement de VaultOs"
+    />
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+import ProjectPageLayout from '../../components/ProjectPageLayout.astro';
+import RiceLinux from '../../components/projects/RiceLinux.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<ProjectPageLayout
+  title="Rice Linux complet"
+  previous={{ href: `${base}projets/cpu-8-bits/`, label: 'CPU 8 bits' }}
+  next={{ href: `${base}projets/analyse-kernel-linux/`, label: 'Analyse du kernel Linux' }}
+>
+  <RiceLinux />
+</ProjectPageLayout>

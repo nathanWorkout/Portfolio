@@ -158,7 +158,7 @@ section > * {
   max-width: 46rem;
   min-height: 14rem;
   margin-left: clamp(2rem, 5vw, 6rem);
-  color: #d6e5e7;
+  color: var(--content-text);
   font-size: clamp(1.1rem, 1.55vw, 1.55rem);
   font-weight: 500;
   letter-spacing: -0.025em;

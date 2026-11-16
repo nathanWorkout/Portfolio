@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/projects.css';
 import Layout from '../layouts/layout.astro';
 import PortfolioSidebar from '../components/PortfolioSidebar.astro';
 import PagePagination from '../components/PagePagination.astro';
@@ -12,13 +13,13 @@ const base = import.meta.env.BASE_URL.endsWith('/')
 <Layout title="Mes projets - Portfolio">
   <div class="page">
     <PortfolioSidebar />
-    <main class="projects-page">
-      <section id="systeme-exploitation-64-bits" class="project-section">
-        <p class="eyebrow">Projet / 01</p>
-        <h1>Système d'exploitation 64 bits</h1>
-        <p>
-          Développement d'un système d'exploitation 64 bits en C et en assembleur
-          NASM.
+    <main class="projects-page projects-index">
+      <section class="project-section">
+        <p class="eyebrow">Portfolio / Projets</p>
+        <h1>Mes projets</h1>
+        <p class="project-index-intro">
+          Explore les projets qui construisent mon parcours, du matériel au système
+          d’exploitation.
         </p>
       </section>
     </main>

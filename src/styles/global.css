@@ -17,6 +17,7 @@ html {
   --sidebar-accent: #45c9f5;
   --sidebar-border: rgba(214, 229, 231, 0.25);
   --sidebar-separator: rgba(214, 229, 231, 0.28);
+  --content-text: rgba(214, 229, 231, 0.72);
 }
 
 body {
@@ -46,34 +47,6 @@ body::before {
 .page {
   position: relative;
   overflow-x: clip;
-}
-
-.projects-page {
-  min-height: 100svh;
-  padding: 14vh 8% 14vh 34vw;
-  background: #0b1a1e;
-}
-
-.project-section {
-  max-width: 52rem;
-  padding-top: 12vh;
-  scroll-margin-top: 2rem;
-}
-
-.project-section h1 {
-  margin-bottom: 2rem;
-  color: #d6e5e7;
-  font-size: clamp(2.8rem, 6vw, 6rem);
-  font-weight: 600;
-  letter-spacing: -0.07em;
-  line-height: 0.94;
-}
-
-.project-section > p:last-child {
-  max-width: 40rem;
-  color: #d6e5e7;
-  font-size: clamp(1.1rem, 1.55vw, 1.55rem);
-  line-height: 1.45;
 }
 
 .sr-only {
@@ -212,14 +185,6 @@ body::before {
 @media (max-width: 700px) {
   body {
     background: #0b1a1e;
-  }
-
-  .projects-page {
-    padding: 7rem 7% 8rem;
-  }
-
-  .project-section {
-    padding-top: 5rem;
   }
 
   .portfolio-nav {

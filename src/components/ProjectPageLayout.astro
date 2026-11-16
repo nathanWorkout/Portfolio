@@ -1,0 +1,25 @@
+---
+import '../styles/global.css';
+import '../styles/projects.css';
+import Layout from '../layouts/layout.astro';
+import PortfolioSidebar from './PortfolioSidebar.astro';
+import PagePagination from './PagePagination.astro';
+
+interface Props {
+  title: string;
+  previous?: { href: string; label: string };
+  next?: { href: string; label: string };
+}
+
+const { title, previous, next } = Astro.props;
+---
+
+<Layout title={`${title} - Portfolio`}>
+  <div class="page">
+    <PortfolioSidebar />
+    <main class="projects-page">
+      <slot />
+    </main>
+    <PagePagination previous={previous} next={next} />
+  </div>
+</Layout>

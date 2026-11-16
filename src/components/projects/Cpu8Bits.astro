@@ -1,0 +1,85 @@
+---
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<section id="cpu-8-bits" class="project-section">
+  <p class="eyebrow">CPU 8 bits</p>
+  <h1>Construction d'un CPU 8 bits de zéro</h1>
+
+  <div class="project-description">
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/cpu1.png`}
+      alt="Vue d'ensemble du processeur 8 bits dans Logic World"
+    />
+    <p>
+      Logic World est un jeu de simulation qui ne fournit que le strict nécessaire :
+      des portes logiques et des fils électriques. Tout le reste doit être construit
+      à partir de ces éléments. J’ai choisi de concevoir un processeur 8 bits
+      entièrement de zéro. Il n’est pas encore terminé, mais il est déjà bien avancé.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/registres.png`}
+      alt="Registres du processeur 8 bits"
+    />
+    <p>
+      Le processeur dispose de 8 registres de 8 bits, indispensables pour exécuter
+      des opérations et acheminer les valeurs entre les composants. Chaque valeur est
+      mémorisée à l’aide de verrous (latches), et un bit de contrôle active l’écriture
+      dans le registre sélectionné.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/multiplexeur.png`}
+      alt="Multiplexeur du processeur 8 bits"
+    />
+    <p>
+      Un multiplexeur est un circuit qui sélectionne une source parmi plusieurs
+      entrées grâce à des bits de sélection. Mon processeur en comporte deux :
+    </p>
+    <ul>
+      <li>
+        Le premier choisit entre les opérations de l’unité arithmétique et logique et
+        l’instruction MOV, qui transfère une valeur d’un registre à un autre. J’y
+        ajouterai LDI et d’autres instructions selon les besoins.
+      </li>
+      <li>
+        Le second est intégré à l’ALU et sélectionne l’une des 11 opérations
+        disponibles.
+      </li>
+    </ul>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/alu.png`}
+      alt="Unité arithmétique et logique du processeur 8 bits"
+    />
+    <p>
+      L’ALU est la partie du processeur chargée des calculs. La mienne prend en
+      charge 11 opérations : ADD, SUB, NOT, AND, OR, XOR, SHL, SHR, INC, DEC et MUL.
+      Le composant imposant situé sur la gauche est le multiplieur. La multiplication
+      demande un très grand nombre d’opérations élémentaires, ce qui explique
+      pourquoi, en programmation bas niveau, on lui préfère souvent le décalage de
+      bits.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/centreDeControle.png`}
+      alt="Centre de contrôle du processeur 8 bits"
+    />
+    <p>
+      Le centre de contrôle sert principalement aux tests et au débogage. C’est d’ici
+      que j’envoie toutes les instructions au processeur (calculs, stockage,
+      transferts de valeurs) et que je récupère les résultats, en binaire ou en
+      hexadécimal. Pour obtenir un processeur complet, il me manque encore plusieurs
+      éléments, notamment la RAM et l’écran. Je travaille actuellement sur
+      l’instruction MOV, c’est-à-dire le transfert de données entre les registres.
+    </p>
+  </div>
+</section>
