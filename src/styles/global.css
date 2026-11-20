@@ -97,13 +97,15 @@ body::before {
 }
 
 .portfolio-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 5;
   width: 28vw;
-  min-height: 100svh;
+  height: 100svh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 5vh 2.25vw;
   background: var(--sidebar-background);
   border-right: 1px solid var(--sidebar-separator);
@@ -233,8 +235,10 @@ body::before {
   .menu-toggle span:not(.sr-only) {
     display: block;
     width: 1.35rem;
-    height: 1px;
-    background: var(--sidebar-text);
+    height: 2px;
+    background: #ffffff;
+    border-radius: 999px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
   }
 
   .nav-identity {
