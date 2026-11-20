@@ -218,8 +218,11 @@ body::before {
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
+    appearance: none;
+    -webkit-appearance: none;
     border: 0;
     background: transparent;
+    color: #ffffff;
     cursor: pointer;
   }
 
@@ -236,7 +239,8 @@ body::before {
     display: block;
     width: 1.35rem;
     height: 2px;
-    background: #ffffff;
+    flex: none;
+    background-color: #ffffff !important;
     border-radius: 999px;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
   }
