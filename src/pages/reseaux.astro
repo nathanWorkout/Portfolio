@@ -34,34 +34,6 @@ const base = import.meta.env.BASE_URL.endsWith('/')
         </div>
       </section>
 
-      <section id="github" class="project-section project-section-compact">
-        <p class="eyebrow">Mes réseaux / 02</p>
-        <h1>GitHub</h1>
-
-        <div class="project-description">
-          <a href="https://github.com/nathanWorkout" target="_blank" rel="noopener noreferrer">
-            <img
-              class="project-media project-article-image"
-              src={`${base}img/github.png`}
-              alt="Profil GitHub de Nathan"
-            />
-          </a>
-          <p>
-            J’utilise GitHub pour versionner mes projets et rendre publics, en open source,
-            les plus importants, comme{' '}
-            <a
-              class="project-inline-link"
-              href="https://github.com/nathanWorkout/VaultOs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              VaultOS
-            </a>,
-            mon système d’exploitation 64 bits. On y retrouve aussi VaultLang, mon langage
-            de programmation bas niveau, et VaultRice, ma configuration Hyprland.
-          </p>
-        </div>
-      </section>
     </main>
     <PagePagination
       previous={{ href: `${base}projets/`, label: 'Mes projets' }}
