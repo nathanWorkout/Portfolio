@@ -1,4 +1,118 @@
-<section id="rice-linux" class="project-section project-section-compact">
-  <p class="eyebrow">Projet / 04</p>
-  <h2>Rice Linux complet</h2>
+---
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<section id="rice-linux" class="project-section">
+  <p class="eyebrow">Rice Linux</p>
+  <h1>VaultRice</h1>
+
+  <div class="project-description">
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/rice1_home.png`}
+      alt="Vue d'ensemble de VaultRice sur Hyprland"
+    />
+    <p>
+      Un « rice » désigne la transformation d’un bureau Linux presque vide en un
+      environnement unique, entièrement personnalisé et pleinement utilisable au
+      quotidien.
+    </p>
+    <p>
+      VaultRice est une configuration Hyprland que j’ai conçue pour répondre à un
+      besoin simple : des thèmes minimalistes, sobres, mais soignés.
+    </p>
+    <p>
+      Au fil de mon expérience sous Linux, j’ai testé de nombreuses configurations
+      prêtes à l’emploi, comme end4, HyDE ou Caelestia Shell. Toutes ont fini par
+      me décevoir au bout de quelques semaines : elles sont trop complexes, peu
+      personnalisables et surtout pas assez minimalistes, même si Caelestia Shell
+      s’en rapproche. J’ai donc voulu créer un environnement complet qui me
+      corresponde : un style minimaliste et élégant, mais surtout extrêmement riche
+      en options de personnalisation, afin de répondre à mon besoin de changement.
+    </p>
+    <p>
+      Pour cela, je suis parti d’un tutoriel YouTube présentant une configuration
+      Waybar et Hyprland très propre, mais limitée, que j’ai ensuite étendue avec
+      mon propre système de thèmes et de nouvelles fonctionnalités.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/rofi.png`}
+      alt="Lanceur d'applications Rofi"
+    />
+    <p>
+      Rofi est mon lanceur d’applications : une grille d’icônes et une barre de
+      recherche suffisent. Il adopte la palette du thème actif, comme le reste de
+      l’environnement, tandis que SwayNC prend en charge les notifications.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/rice2_cool.png`}
+      alt="Gestionnaire de fichiers Dolphin"
+    />
+    <p>
+      Dolphin est le gestionnaire de fichiers de mon environnement. Comme les autres
+      composants, il adopte automatiquement les couleurs du thème sélectionné, ce
+      qui a été l’une des parties les plus difficiles à mettre en place.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/rice3_nvim.png`}
+      alt="Configuration Neovim avec VaultRice"
+    />
+    <p>
+      Neovim est mon éditeur pour écrire du code rapidement, et son principal
+      avantage est qu’il est entièrement personnalisable. J’ai branché mon système
+      de thèmes sur ma configuration : chaque thème de VaultRice change aussi celui
+      de Neovim, en s’appuyant sur les thèmes officiels comme Catppuccin Mocha ou
+      Gruvbox. Les 21 thèmes sont pris en charge.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/rice_4nvim2.png`}
+      alt="Exemple de changement de thème dans Neovim"
+    />
+    <p>
+      Ces captures montrent un exemple de changement de thème. Les plus curieux
+      pourront y repérer la liste complète des 21 thèmes dans le code.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/rice6_themes.png`}
+      alt="Sélecteur de thèmes VaultRice"
+    />
+    <p>
+      Le sélecteur de thèmes est une interface Quickshell avec recherche. VaultRice
+      propose 21 thèmes, comme Catppuccin, Gruvbox ou Dracula. Sélectionner un
+      thème applique sa palette à Neovim, Rofi, SwayNC, Dolphin, Waybar, Quickshell
+      et Zathura.
+    </p>
+
+    <img
+      class="project-media project-article-image"
+      src={`${base}img/rice5_walls.png`}
+      alt="Sélecteur de fonds d'écran VaultRice"
+    />
+    <p>
+      Chaque thème contient ses propres fonds d’écran, que je choisis depuis un
+      second sélecteur Quickshell, avec aperçus et recherche. Une fois le thème
+      choisi, tout l’environnement se reconfigure.
+    </p>
+
+    <p>
+      VaultRice dispose d’un dépôt GitHub, mais il n’est pas encore stable : faire
+      fonctionner une configuration sur sa propre machine et la rendre utilisable
+      par d’autres sont deux choses très différentes. J’en suis actuellement à
+      l’étape des tests en machine virtuelle et à l’écriture d’un script
+      d’installation, qui prendra en charge la plupart des distributions de base,
+      comme Gentoo, Arch ou Debian.
+    </p>
+  </div>
 </section>
